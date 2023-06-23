@@ -20,6 +20,9 @@ packages:
   - luci-app-upnp
   - kmod-zram
   - zram-swap
+  - kmod-conninfra-mt7981-ko
+  - kmod-mt-wifi-mt7981-ko
+  - kmod-warp-mt7981-ko
 
 
 
