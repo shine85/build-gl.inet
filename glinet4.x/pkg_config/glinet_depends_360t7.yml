@@ -1067,8 +1067,6 @@ packages:
 - stubby
 - sudo
 - swconfig
-- tailscale
-- tailscaled
 - tc-mod-iptables
 - tc-tiny
 - terminfo
