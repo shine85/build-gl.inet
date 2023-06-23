@@ -389,7 +389,7 @@ diffconfig: 'CONFIG_ALL_KMODS=y
   CONFIG_MTK_ZERO_LOSS_CSA_SUPPORT=y
 
 
-  CONFIG_NFS_KERNEL_SERVER_V4=y
+  # CONFIG_NFS_KERNEL_SERVER_V4 is not set
 
 
   CONFIG_NGINX_HTTP_FASTCGI=y
@@ -515,22 +515,22 @@ diffconfig: 'CONFIG_ALL_KMODS=y
   CONFIG_RPCBIND_RMTCALLS=y
 
 
-  CONFIG_SAMBA4_SERVER_AD_DC=y
+  # CONFIG_SAMBA4_SERVER_AD_DC is not set
 
 
-  CONFIG_SAMBA4_SERVER_AVAHI=y
+  # CONFIG_SAMBA4_SERVER_AVAHI is not set
 
 
-  CONFIG_SAMBA4_SERVER_NETBIOS=y
+  # CONFIG_SAMBA4_SERVER_NETBIOS is not set
 
 
-  CONFIG_SAMBA4_SERVER_VFS=y
+  # CONFIG_SAMBA4_SERVER_VFS is not set
 
 
-  CONFIG_SAMBA4_SERVER_VFSX=y
+  # CONFIG_SAMBA4_SERVER_VFSX is not set
 
 
-  CONFIG_SAMBA4_SERVER_WSDD2=y
+  # CONFIG_SAMBA4_SERVER_WSDD2 is not set
 
 
   # CONFIG_SIGNATURE_CHECK is not set
@@ -794,21 +794,14 @@ packages:
 - kmod-fs-exfat
 - kmod-fs-exportfs
 - kmod-fs-ext4
-- kmod-fs-nfs
-- kmod-fs-nfs-common
-- kmod-fs-nfs-common-rpcsec
-- kmod-fs-nfs-v4
-- kmod-fs-nfsd
 - kmod-fs-ntfs
 - kmod-fs-vfat
 - kmod-fuse
-- kmod-gl-sdk4-fan
 - kmod-gl-sdk4-hw-info
 - kmod-gl-sdk4-parental-control
 - kmod-gl-sdk4-tertf
 - kmod-gpio-button-hotplug
 - kmod-hwmon-core
-- kmod-hwmon-pwmfan
 - kmod-ifb
 - kmod-ip6tables
 - kmod-ipt-conntrack
@@ -827,6 +820,9 @@ packages:
 - kmod-lib-crc-ccitt
 - kmod-lib-crc16
 - kmod-lib-textsearch
+- kmod-conninfra-mt7981-ko
+- kmod-mt-wifi-mt7981-ko
+- kmod-warp-mt7981-ko
 - kmod-mediatek_hnat
 - kmod-mii
 - kmod-mt_wifi
@@ -857,25 +853,6 @@ packages:
 - kmod-tun
 - kmod-udptunnel4
 - kmod-udptunnel6
-- kmod-usb-acm
-- kmod-usb-core
-- kmod-usb-ehci
-- kmod-usb-net
-- kmod-usb-net-cdc-ether
-- kmod-usb-net-cdc-ncm
-- kmod-usb-net-huawei-cdc-ncm
-- kmod-usb-net-ipheth
-- kmod-usb-net-qmi-wwan
-- kmod-usb-net-rndis
-- kmod-usb-ohci
-- kmod-usb-serial
-- kmod-usb-serial-option
-- kmod-usb-serial-wwan
-- kmod-usb-storage
-- kmod-usb-storage-uas
-- kmod-usb-uhci
-- kmod-usb-wdm
-- kmod-usb2
 - kmod-warp
 - kmod-wireguard
 - libacl
@@ -1060,15 +1037,10 @@ packages:
 - rpcd-mod-luci
 - rpcd-mod-rrdns
 - rtty-openssl
-- samba4-libs
-- samba4-server
-- samba4-utils
 - smstools3
 - stubby
 - sudo
 - swconfig
-- tailscale
-- tailscaled
 - tc-mod-iptables
 - tc-tiny
 - terminfo
@@ -1096,7 +1068,6 @@ packages:
 - wireless-regdb
 - wireless-tools
 - wwan
-- zerotier
 - zlib
 profile: mt7981-360-t7-108M
 subtarget: mt7981
