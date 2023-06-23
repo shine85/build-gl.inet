@@ -5,6 +5,7 @@ profile=$2
 ui=$3
 tag=$4
 tagm=$5
+glversion=$6
 echo $base
 if [ ! -e "$base" ]; then
     echo "Please enter base folder"
@@ -56,6 +57,10 @@ function build_firmware(){
     cd ~/openwrt
     need_gl_ui=$1
     ui_path=$2
+    # setup version
+    echo "$glversion" > package/base-files/files/etc/glversion
+    echo `date +%Y-%m-%d` > package/base-files/files/etc/version.date
+    echo "unofficial" > package/base-files/files/etc/version.type
     # fix helloword build error
     rm -rf feeds/packages/lang/golang
     svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
