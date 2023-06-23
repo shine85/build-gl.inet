@@ -31,6 +31,7 @@ on:
         - target_ath79_gl-ar300m-nor
         - target_mt7981_gl-x3000
         - target_mt7981_gl-xe3000
+        - target_mt7981_360t7
 
       ui:
         description: '是否包含官方UI (目前仅IPQ6018系列、GL-MT2500、GL-MT3000、GL-A1300和GL-S200支持官方UI)'
@@ -84,17 +85,17 @@ jobs:
         name: OpenWrt_packages${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.PACKAGES }}
 
-    - name: Generate release tag
-      id: tag
-      if: true && !failure() && !cancelled()
-      run: |
-        echo "release_tag=${{inputs.device}}.${{ inputs.ui }}.$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-        echo "status=success" >> $GITHUB_OUTPUT 
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled() && !failure()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        files: ${{ env.FIRMWARE }}/*
+    # - name: Generate release tag
+    #   id: tag
+    #   if: true && !failure() && !cancelled()
+    #   run: |
+    #     echo "release_tag=${{inputs.device}}.${{ inputs.ui }}.$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+    #     echo "status=success" >> $GITHUB_OUTPUT 
+    # - name: Upload firmware to release
+    #   uses: softprops/action-gh-release@v1
+    #   if: steps.tag.outputs.status == 'success' && !cancelled() && !failure()
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   with:
+    #     tag_name: ${{ steps.tag.outputs.release_tag }}
+    #     files: ${{ env.FIRMWARE }}/*

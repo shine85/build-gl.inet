@@ -34,12 +34,19 @@ fi
 
 if [[ $ui == true ]]; then
     git clone -b $tagm https://github.com/gl-inet/glinet4.x.git ~/glinet
+    # add custom
+    cp -r glinet4.x/*  ~/glinet/
+    # add custom
 fi
 
 echo "Start..."
 
 #clone source tree 
 git clone -b $tag https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
+# add custom
+cp -r gl-infra-builder/*  $base/gl-infra-builder/
+rm -f $base/gl-infra-builder/patches-mt798x-7.6.6.1/3003-target-mediatek-mtk-eth-poll-gpy211-link-state.patch
+# add custom
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
 cp -r *.yml $base/gl-infra-builder/profiles
 cd $base/gl-infra-builder
@@ -101,12 +108,17 @@ case $profile in
     ;;
     target_mt7981_gl-mt2500|\
     target_mt7981_gl-mt3000|\
+    target_mt7981_360t7|\
     target_mt7981_gl-x3000|\
     target_mt7981_gl-xe3000)
         python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
         ln -s $base/gl-infra-builder/mt7981 ~/openwrt && cd ~/openwrt    
         if [[ $ui == true  ]]; then
-            if [[ $profile == *mt3000* ]]; then
+            if [[ $profile == *360t7* ]]; then
+                cp ~/glinet/pkg_config/gl_pkg_config_360t7.mk  ~/glinet/mt7981/gl_pkg_config.mk
+                cp ~/glinet/pkg_config/glinet_depends_360t7.yml  ./profiles/glinet_depends.yml
+                ./scripts/gen_config.py glinet_depends custom
+            elif [[ $profile == *mt3000* ]]; then
                 cp ~/glinet/pkg_config/gl_pkg_config_mt3000.mk  ~/glinet/mt7981/gl_pkg_config.mk
                 cp ~/glinet/pkg_config/glinet_depends_mt3000.yml  ./profiles/glinet_depends.yml
                 ./scripts/gen_config.py glinet_depends custom
