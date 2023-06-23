@@ -18,6 +18,7 @@ packages:
   - wireguard
   - luci-app-eqos
   - wireguard-tools
+  - luci-app-upnp
 
 
 
