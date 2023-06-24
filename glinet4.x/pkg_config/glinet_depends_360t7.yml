@@ -1096,6 +1096,7 @@ packages:
 - wwan
 - zerotier
 - zlib
+- luci-app-upnp
 - kmod-zram
 - zram-swap
 - kmod-conninfra-mt7981-ko

@@ -14,7 +14,6 @@ packages:
   - luci-app-commands
   - luci-app-mwan3
   - luci-app-eqos
-  - luci-app-upnp
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
