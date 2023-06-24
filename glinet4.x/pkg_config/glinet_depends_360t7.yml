@@ -1096,6 +1096,12 @@ packages:
 - wwan
 - zerotier
 - zlib
+- kmod-zram
+- zram-swap
+- kmod-conninfra-mt7981-ko
+- kmod-mt-wifi-mt7981-ko
+- kmod-warp-mt7981-ko
+
 profile: mt7981-360-t7-108M
 subtarget: mt7981
 target: mediatek

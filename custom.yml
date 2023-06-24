@@ -15,13 +15,6 @@ packages:
   - luci-app-mwan3
   - luci-app-eqos
   - luci-app-upnp
-  - kmod-zram
-  - zram-swap
-  - kmod-conninfra-mt7981-ko
-  - kmod-mt-wifi-mt7981-ko
-  - kmod-warp-mt7981-ko
-
-
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
