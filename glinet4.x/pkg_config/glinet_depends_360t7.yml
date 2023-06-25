@@ -202,6 +202,9 @@ diffconfig: 'CONFIG_ALL_KMODS=y
 
   # CONFIG_MTK_FIRST_IF_NONE is not set
 
+  CONFIG_MTK_SECOND_IF_NONE=y
+
+  CONFIG_MTK_THIRD_IF_NONE=y
 
   CONFIG_MTK_GREENAP_SUPPORT=y
 
@@ -476,16 +479,16 @@ diffconfig: 'CONFIG_ALL_KMODS=y
   # CONFIG_PACKAGE_dnsmasq is not set
 
 
-  # CONFIG_PACKAGE_kmod-conninfra-mt7981-ko is not set
+  CONFIG_PACKAGE_kmod-conninfra-mt7981-ko=m
 
 
   # CONFIG_PACKAGE_kmod-dm-raid is not set
 
 
-  # CONFIG_PACKAGE_kmod-mapfilter is not set
+  CONFIG_PACKAGE_kmod-mapfilter=y
 
 
-  # CONFIG_PACKAGE_kmod-mt-wifi-mt7981-ko is not set
+  CONFIG_PACKAGE_kmod-mt-wifi-mt7981-ko=m
 
 
   # CONFIG_PACKAGE_kmod-mt7915 is not set
@@ -506,8 +509,15 @@ diffconfig: 'CONFIG_ALL_KMODS=y
   # CONFIG_PACKAGE_kmod-sound-soc-spdif is not set
 
 
-  # CONFIG_PACKAGE_kmod-warp-mt7981-ko is not set
+  CONFIG_PACKAGE_kmod-warp-mt7981-ko=m
 
+  CONFIG_PACKAGE_wifi-profile=y
+
+  CONFIG_PACKAGE_kmod-mt_wifi=y
+
+  CONFIG_MTK_SUPPORT_OPENWRT=y
+
+  CONFIG_MTK_WIFI_DRIVER=y
 
   CONFIG_RPCBIND_LIBWRAP=y
 
@@ -566,14 +576,22 @@ diffconfig: 'CONFIG_ALL_KMODS=y
   CONFIG_WED_HW_RRO_SUPPORT=y
 
 
-  # CONFIG_WIFI_NORMAL_SETTING is not set
+  CONFIG_WIFI_NORMAL_SETTING=y
 
 
-  CONFIG_WIFI_QUICK_SETTING=y
+  # CONFIG_WIFI_QUICK_SETTING is not set
 
+  CONFIG_PACKAGE_libmapd=y
+
+  CONFIG_PACKAGE_mtk-base-files=y
+
+  CONFIG_first_card=y
 
   CONFIG_first_card_EEPROM_size="0xA0000"
 
+  CONFIG_first_card_EEPROM_offset="0x0"
+
+  CONFIG_first_card_EEPROM_name="e2p"
 
   CONFIG_first_card_apcli_ifname="apcli;apclix"
 
