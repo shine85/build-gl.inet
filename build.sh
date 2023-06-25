@@ -59,7 +59,7 @@ function build_firmware(){
     ui_path=$2
     # setup version
     echo "$glversion" > package/base-files/files/etc/glversion
-    echo `date +%Y-%m-%d` > package/base-files/files/etc/version.date
+    echo `date '+%Y-%m-%d %H:%M:%S'` > package/base-files/files/etc/version.date
     echo "unofficial" > package/base-files/files/etc/version.type
     # fix helloword build error
     rm -rf feeds/packages/lang/golang
@@ -113,16 +113,18 @@ case $profile in
     ;;
     target_mt7981_gl-mt2500|\
     target_mt7981_gl-mt3000|\
-    target_mt7981_360t7|\
+    target_mt7981_qh-360t7|\
     target_mt7981_gl-x3000|\
     target_mt7981_gl-xe3000)
         python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
-        ln -s $base/gl-infra-builder/mt7981 ~/openwrt && cd ~/openwrt    
+        ln -s $base/gl-infra-builder/mt7981 ~/openwrt && cd ~/openwrt
+        ./scripts/gen_config.py $profile luci
         if [[ $ui == true  ]]; then
             if [[ $profile == *360t7* ]]; then
                 cp ~/glinet/pkg_config/gl_pkg_config_360t7.mk  ~/glinet/mt7981/gl_pkg_config.mk
-                cp ~/glinet/pkg_config/glinet_depends_360t7.yml  ./profiles/glinet_depends.yml
-                ./scripts/gen_config.py glinet_depends custom
+                # cp ~/glinet/pkg_config/glinet_depends_360t7.yml  ./profiles/glinet_depends.yml
+                # ./scripts/gen_config.py glinet_depends custom
+                ./scripts/gen_config.py $profile glinet_depends custom
             elif [[ $profile == *mt3000* ]]; then
                 cp ~/glinet/pkg_config/gl_pkg_config_mt3000.mk  ~/glinet/mt7981/gl_pkg_config.mk
                 cp ~/glinet/pkg_config/glinet_depends_mt3000.yml  ./profiles/glinet_depends.yml

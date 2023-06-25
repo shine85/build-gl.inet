@@ -11,7 +11,7 @@ on:
       device:
         description: '选择设备'     
         required: true
-        default: 'target_mt7981_360t7' 
+        default: 'target_mt7981_qh-360t7' 
         type: choice
         options:
         - target_wlan_ap-gl-ax1800
@@ -31,7 +31,7 @@ on:
         - target_ath79_gl-ar300m-nor
         - target_mt7981_gl-x3000
         - target_mt7981_gl-xe3000
-        - target_mt7981_360t7
+        - target_mt7981_qh-360t7
 
       ui:
         description: '是否包含官方UI (目前仅IPQ6018系列、GL-MT2500、GL-MT3000、GL-A1300和GL-S200支持官方UI)'
@@ -47,7 +47,7 @@ on:
       glversion:
         description: '请输入固件版本号'     
         required: true
-        default: '4.2.2'
+        default: '4.2.0'
         
 jobs:
   build:
