@@ -59,11 +59,14 @@ function build_firmware(){
     ui_path=$2
     # setup version
     echo "$glversion" > package/base-files/files/etc/glversion
-    echo `date '+%Y-%m-%d %H:%M:%S'` > package/base-files/files/etc/version.date
+    # echo `date '+%Y-%m-%d %H:%M:%S'` > package/base-files/files/etc/version.date
     echo "unofficial" > package/base-files/files/etc/version.type
     # fix helloword build error
     rm -rf feeds/packages/lang/golang
     svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
+    # fix upnp https://forum.gl-inet.cn/forum.php?mod=viewthread&tid=3240&highlight=upnp
+    rm -rf feeds/packages/net/miniupnpd
+    svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 

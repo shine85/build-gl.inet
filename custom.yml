@@ -11,9 +11,10 @@ packages:
   - ddns-scripts-services
   - ddns-scripts_aliyun
   - dnsmasq-full
-  - luci-app-commands
-  - luci-app-mwan3
+  # - luci-app-commands
+  # - luci-app-mwan3
   - luci-app-eqos
+  - luci-app-upnp
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n

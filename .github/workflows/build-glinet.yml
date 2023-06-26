@@ -6,7 +6,7 @@ on:
       tag_main:
         description: '请输入gl-inet/gl-infra-builder TAG'     
         required: true
-        default: 'v4.2.0_mt3000_release1' 
+        default: 'v4.2.3_release4' 
 
       device:
         description: '选择设备'     
@@ -42,12 +42,12 @@ on:
       tag_no:
         description: '请输入gl-inet/glinet4.x TAG'     
         required: true
-        default: '4.2.0_MT3000_release1' 
+        default: 'main' 
       
       glversion:
         description: '请输入固件版本号'     
         required: true
-        default: '4.2.0'
+        default: '4.2.3'
         
 jobs:
   build:
@@ -92,18 +92,3 @@ jobs:
       with:
         name: OpenWrt_packages${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.PACKAGES }}
-
-    # - name: Generate release tag
-    #   id: tag
-    #   if: true && !failure() && !cancelled()
-    #   run: |
-    #     echo "release_tag=${{inputs.device}}.${{ inputs.ui }}.$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-    #     echo "status=success" >> $GITHUB_OUTPUT 
-    # - name: Upload firmware to release
-    #   uses: softprops/action-gh-release@v1
-    #   if: steps.tag.outputs.status == 'success' && !cancelled() && !failure()
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   with:
-    #     tag_name: ${{ steps.tag.outputs.release_tag }}
-    #     files: ${{ env.FIRMWARE }}/*
