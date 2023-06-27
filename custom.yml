@@ -4,6 +4,15 @@ feeds:
   - name: helloworld
     uri: https://github.com/fw876/helloworld.git
     branch: master
+  - name: openwrt-fullconenat
+    uri: https://github.com/LGA1150/openwrt-fullconenat.git
+    branch: master
+  - name: luci-app-fullconenat
+    uri: https://github.com/peter-tank/luci-app-fullconenat.git
+    branch: master
+  - name: luci-theme-design
+    uri: https://github.com/gngpp/luci-theme-design.git
+    branch: js
 packages:
   - luci-app-ssr-plus
   - luci-app-ddns
@@ -14,7 +23,10 @@ packages:
   # - luci-app-commands
   # - luci-app-mwan3
   - luci-app-eqos
-  - luci-app-upnp
+  # - luci-app-upnp
+  - iptables-mod-fullconenat
+  - luci-app-fullconenat
+  - luci-theme-design
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
