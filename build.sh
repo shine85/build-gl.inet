@@ -67,9 +67,13 @@ function build_firmware(){
     # fix upnp https://forum.gl-inet.cn/forum.php?mod=viewthread&tid=3240&highlight=upnp
     rm -rf feeds/packages/net/miniupnpd
     svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
-    # add fullcorenat patch
-    # mkdir package/network/config/firewall/patches
-    # cp $CRTDIR/0100-fullconenat.patch package/network/config/firewall/patches/0100-fullconenat.patch
+    # add fullcorenat
+    git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
+    git clone -b master --single-branch https://github.com/peter-tank/luci-app-fullconenat.git package/luci/fullconenat
+    mkdir package/network/config/patches
+    cp $CRTDIR/0100-fullconenat.patch package/network/config/patches/0100-fullconenat.patch
+    # add luci theme design
+    git clone -b js --single-branch https://github.com/gngpp/luci-theme-design.git package/luci/design
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 

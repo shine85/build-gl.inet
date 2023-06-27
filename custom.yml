@@ -24,9 +24,9 @@ packages:
   # - luci-app-mwan3
   - luci-app-eqos
   - luci-app-upnp
-  # - iptables-mod-fullconenat
-  # - luci-app-fullconenat
-  # - luci-theme-design
+  - iptables-mod-fullconenat
+  - luci-app-fullconenat
+  - luci-theme-design
   - kmod-gl-sdk4-tertf
 
 diffconfig: |
