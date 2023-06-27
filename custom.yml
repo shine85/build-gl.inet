@@ -27,6 +27,7 @@ packages:
   - iptables-mod-fullconenat
   - luci-app-fullconenat
   - luci-theme-design
+  - kmod-gl-sdk4-tertf
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
