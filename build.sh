@@ -68,8 +68,8 @@ function build_firmware(){
     rm -rf feeds/packages/net/miniupnpd
     svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
     # add fullcorenat patch
-    mkdir package/network/config/firewall/patches
-    cp $CRTDIR/0100-fullconenat.patch package/network/config/firewall/patches/0100-fullconenat.patch
+    # mkdir package/network/config/firewall/patches
+    # cp $CRTDIR/0100-fullconenat.patch package/network/config/firewall/patches/0100-fullconenat.patch
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 
