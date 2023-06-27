@@ -22,7 +22,7 @@ packages:
   - dnsmasq-full
   # - luci-app-commands
   # - luci-app-mwan3
-  - luci-app-eqos
+  # - luci-app-eqos
   - luci-app-upnp
   - iptables-mod-fullconenat
   - luci-app-fullconenat
