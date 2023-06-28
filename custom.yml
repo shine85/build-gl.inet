@@ -28,6 +28,8 @@ packages:
   - luci-app-fullconenat
   - luci-theme-design
   - kmod-gl-sdk4-tertf
+  - kmod-zram
+  - zram-swap
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
