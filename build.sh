@@ -68,12 +68,12 @@ function build_firmware(){
     rm -rf feeds/packages/net/miniupnpd
     svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
     # add fullcorenat
-    git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
-    git clone -b master --single-branch https://github.com/peter-tank/luci-app-fullconenat.git package/luci/fullconenat
+    # git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
+    # git clone -b master --single-branch https://github.com/peter-tank/luci-app-fullconenat.git package/luci/fullconenat
     mkdir package/network/config/patches
     cp $CRTDIR/0100-fullconenat.patch package/network/config/patches/0100-fullconenat.patch
     # add luci theme design
-    git clone -b js --single-branch https://github.com/gngpp/luci-theme-design.git package/luci/design
+    # git clone -b js --single-branch https://github.com/gngpp/luci-theme-design.git package/luci/design
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 
@@ -134,7 +134,7 @@ case $profile in
                 cp ~/glinet/pkg_config/gl_pkg_config_360t7.mk  ~/glinet/mt7981/gl_pkg_config.mk
                 # cp ~/glinet/pkg_config/glinet_depends_360t7.yml  ./profiles/glinet_depends.yml
                 # ./scripts/gen_config.py glinet_depends custom
-                ./scripts/gen_config.py $profile glinet_depends custom
+                ./scripts/gen_config.py keepfeeds $profile glinet_depends custom
             elif [[ $profile == *mt3000* ]]; then
                 cp ~/glinet/pkg_config/gl_pkg_config_mt3000.mk  ~/glinet/mt7981/gl_pkg_config.mk
                 cp ~/glinet/pkg_config/glinet_depends_mt3000.yml  ./profiles/glinet_depends.yml
