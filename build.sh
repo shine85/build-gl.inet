@@ -44,10 +44,15 @@ echo "Start..."
 
 #clone source tree 
 git clone -b $tag https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
-# add custom
+# add custom start
 cp -r gl-infra-builder/*  $base/gl-infra-builder/
 rm -f $base/gl-infra-builder/patches-mt798x-7.6.6.1/3003-target-mediatek-mtk-eth-poll-gpy211-link-state.patch
-# add custom
+# add fullcorenat
+git clone -b master https://github.com/LGA1150/openwrt-fullconenat.git custom/openwrt-fullconenat
+git clone -b master https://github.com/peter-tank/luci-app-fullconenat.git custom/luci-app-fullconenat
+# add luci theme design
+git clone -b js https://github.com/gngpp/luci-theme-design.git custom/luci-theme-design
+# add custom ended
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
 cp -r *.yml $base/gl-infra-builder/profiles
 cd $base/gl-infra-builder
@@ -67,13 +72,9 @@ function build_firmware(){
     # fix upnp https://forum.gl-inet.cn/forum.php?mod=viewthread&tid=3240&highlight=upnp
     rm -rf feeds/packages/net/miniupnpd
     svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
-    # add fullcorenat
-    # git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
-    # git clone -b master --single-branch https://github.com/peter-tank/luci-app-fullconenat.git package/luci/fullconenat
-    mkdir package/network/config/patches
-    cp $CRTDIR/0100-fullconenat.patch package/network/config/patches/0100-fullconenat.patch
-    # add luci theme design
-    # git clone -b js --single-branch https://github.com/gngpp/luci-theme-design.git package/luci/design
+    # add fullcorenat patch
+    mkdir package/network/config/firewall/patches
+    cp $CRTDIR/fullconenat.patch package/network/config/firewall/patches/fullconenat.patch
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 
