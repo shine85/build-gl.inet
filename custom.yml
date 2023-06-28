@@ -4,15 +4,6 @@ feeds:
   - name: helloworld
     uri: https://github.com/fw876/helloworld.git
     branch: master
-  # - name: openwrt_fullconenat
-  #   uri: https://github.com/LGA1150/openwrt-fullconenat.git
-  #   branch: master
-  # - name: luci_app_fullconenat
-  #   uri: https://github.com/peter-tank/luci-app-fullconenat.git
-  #   branch: master
-  # - name: luci_theme_design
-  #   uri: https://github.com/gngpp/luci-theme-design.git
-  #   branch: js
 packages:
   - luci-app-ssr-plus
   - luci-app-ddns
@@ -24,9 +15,9 @@ packages:
   # - luci-app-mwan3
   # - luci-app-eqos
   - luci-app-upnp
-  - kmod-ipt-fullconenat
-  - iptables-mod-fullconenat
-  - luci-app-fullconenat
+  # - kmod-ipt-fullconenat
+  # - iptables-mod-fullconenat
+  # - luci-app-fullconenat
   - luci-theme-design
   - kmod-gl-sdk4-tertf
   - kmod-zram
