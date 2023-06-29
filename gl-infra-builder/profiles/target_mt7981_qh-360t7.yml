@@ -34,4 +34,3 @@ packages:
   - kmod-mtfwd
   - kmod-mtqos
   - conntrack
-  - kmod-gl-sdk4-parental-control

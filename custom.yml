@@ -23,6 +23,7 @@ packages:
   - kmod-zram
   - zram-swap
   - luci-app-mtk
+  - kmod-gl-sdk4-parental-control
 
 diffconfig: |
   CONFIG_PACKAGE_chinadns-ng=n
