@@ -20,7 +20,7 @@ packages:
   - iwinfo
   - wireless-tools
   - gl-sdk4-mtk-wifi-v2
-  - luci-app-mtkwifi
+  # - luci-app-mtkwifi
   - kmod-conninfra-mt7981-ko
   - kmod-mt-wifi-mt7981-ko
   - kmod-warp-mt7981-ko
