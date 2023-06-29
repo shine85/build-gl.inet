@@ -50,8 +50,6 @@ rm -f $base/gl-infra-builder/patches-mt798x-7.6.6.1/3003-target-mediatek-mtk-eth
 # add fullcorenat
 # git clone -b master https://github.com/LGA1150/openwrt-fullconenat.git custom/openwrt-fullconenat
 # git clone -b master https://github.com/peter-tank/luci-app-fullconenat.git custom/luci-app-fullconenat
-# add luci theme design
-git clone -b js https://github.com/gngpp/luci-theme-design.git custom/luci-theme-design
 # add custom ended
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
 cp -r *.yml $base/gl-infra-builder/profiles

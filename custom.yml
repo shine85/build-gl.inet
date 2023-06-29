@@ -18,7 +18,6 @@ packages:
   # - kmod-ipt-fullconenat
   # - iptables-mod-fullconenat
   # - luci-app-fullconenat
-  - luci-theme-design
   - kmod-gl-sdk4-tertf
   - kmod-zram
   - zram-swap
