@@ -73,8 +73,6 @@ function build_firmware(){
     # add fullcorenat patch
     # mkdir package/network/config/firewall/patches
     # cp $CRTDIR/fullconenat.patch package/network/config/firewall/patches/fullconenat.patch
-    # add luci-app-mtk deps
-    cp -r $CRTDIR/openwrt/dl/* dl/
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 

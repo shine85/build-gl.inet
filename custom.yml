@@ -22,7 +22,6 @@ packages:
   - kmod-gl-sdk4-tertf
   - kmod-zram
   - zram-swap
-  - luci-app-mtk
   - kmod-gl-sdk4-parental-control
 
 diffconfig: |
