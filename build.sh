@@ -78,9 +78,15 @@ function build_firmware(){
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 
     if [[ $need_gl_ui == true  ]]; then 
-        make -j$(expr $(nproc) + 1) GL_PKGDIR=~/glinet/$ui_path/ V=s
+        make -j$(expr $(nproc) + 1) GL_PKGDIR=~/glinet/$ui_path/
+        if [ $? -ne 0 ]; then
+            make GL_PKGDIR=~/glinet/$ui_path/ V=s
+        fi
     else
         make -j$(expr $(nproc) + 1) V=s
+        if [ $? -ne 0 ]; then
+            make V=s
+        fi
     fi
     return
 }
