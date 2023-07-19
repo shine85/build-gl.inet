@@ -136,12 +136,12 @@ index 0000000000..271dc68f57
 +		compatible = "gpio-leds";
 +
 +		green_led: green {
-+			label = "360t7:green";
++			label = "white:system";
 +			gpios = <&pio 7 GPIO_ACTIVE_LOW>;
 +		};
 +
 +		red_led: red {
-+			label = "360t7:red";
++			label = "blue:run";
 +			gpios = <&pio 3 GPIO_ACTIVE_LOW>;
 +		};
 +	};
@@ -381,8 +381,8 @@ index 43905e604d..779ac123b1 100755
  esac
 +case "$(board_name)" in
 +*360,t7*)
-+	ucidef_set_led_default "green" "GREEN" "360t7:green" "1"
-+	ucidef_set_led_default "red" "RED" "360t7:red" "0"
++	ucidef_set_led_default "green" "GREEN" "white:system" "1"
++	ucidef_set_led_default "red" "RED" "blue:run" "0"
 +	;;
 +esac
  
