@@ -7,10 +7,10 @@ feeds:
 packages:
   - luci-app-ssr-plus
   - luci-compat
-  - luci-app-ddns
-  - ddns-scripts
-  - ddns-scripts-services
-  - ddns-scripts_aliyun
+#  - luci-app-ddns
+#  - ddns-scripts
+#  - ddns-scripts-services
+#  - ddns-scripts_aliyun
   - dnsmasq-full
   # - luci-app-commands
   # - luci-app-mwan3
@@ -19,7 +19,7 @@ packages:
   # - kmod-ipt-fullconenat
   # - iptables-mod-fullconenat
   # - luci-app-fullconenat
-  - kmod-gl-sdk4-tertf
+ # - kmod-gl-sdk4-tertf
   - kmod-zram
   - zram-swap
   - kmod-gl-sdk4-parental-control
@@ -30,7 +30,7 @@ diffconfig: |
   CONFIG_PACKAGE_wpad-basic=n
   CONFIG_PACKAGE_wpad=n
   CONFIG_PACKAGE_dnsmasq=n
-  CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
+#  CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
   CONFIG_LUCI_LANG_zh_Hans=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_FLOAT_SLEEP=y
