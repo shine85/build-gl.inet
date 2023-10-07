@@ -44,7 +44,7 @@ fi
 echo "Start..."
 
 #clone source tree 
-git clone -b $tag https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
+git clone -b $tag https://github.com/papagaye744/gl-infra-builder.git $base/gl-infra-builder
 # add custom start
 cp -r gl-infra-builder/*  $base/gl-infra-builder/
 rm -f $base/gl-infra-builder/patches-mt798x-7.6.6.1/3003-target-mediatek-mtk-eth-poll-gpy211-link-state.patch
