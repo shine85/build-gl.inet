@@ -6,7 +6,7 @@ on:
       tag_main:
         description: '请输入gl-inet/gl-infra-builder TAG'
         required: true
-        default: 'v4.2.3_release5'
+        default: 'main'
 
       device:
         description: '选择设备'
@@ -47,7 +47,7 @@ on:
       glversion:
         description: '请输入固件版本号'
         required: true
-        default: '4.2.3'
+        default: '4.9.9'
       
       glversiontype:
         description: '请输入固件类型'     
